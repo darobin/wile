@@ -1,0 +1,33 @@
+{
+  "name": "mosaist",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Tool to develop Web Tiles",
+  "author": "Robin Berjon <robin@berjon.com>",
+  "scripts": {},
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darobin/wile.git"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "mocha": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {}
+  },
+  "devDependencies": {
+    "eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "commander": "^11.1.0"
+  }
+}
