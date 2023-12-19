@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Wile",
+  "version": "1.0.0",
+  "description": "Experimental support for tiles.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "robin+wile@berjon.com"
+    }
+  },
+  "icons": {
+    "32": "mosaic.svg"
+  },
+  "permissions": [],
+  "protocol_handlers": [
+    {
+      "protocol": "web+tile",
+      "name": "Web Tile",
+      "uriTemplate": "/tile.html#!/%s"
+    }
+  ]
+}
