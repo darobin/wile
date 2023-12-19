@@ -5,7 +5,9 @@
   "description": "Tool to develop Web Tiles",
   "author": "Robin Berjon <robin@berjon.com>",
   "scripts": {},
-  "bin": {},
+  "bin": {
+    "mosaist": "./bin.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/darobin/wile.git"
@@ -28,6 +30,8 @@
     "eslint": "^8.26.0"
   },
   "dependencies": {
-    "commander": "^11.1.0"
+    "@helia/dag-cbor": "^1.0.3",
+    "commander": "^11.1.0",
+    "helia": "^2.1.0"
   }
 }
