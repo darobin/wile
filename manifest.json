@@ -5,7 +5,7 @@
   "description": "Experimental support for tiles.",
   "browser_specific_settings": {
     "gecko": {
-      "id": "robin+wile@berjon.com"
+      "id": "wile@berjon.com"
     }
   },
   "icons": {
