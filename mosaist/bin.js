@@ -17,12 +17,10 @@ program
 program
   .command('serve')
   .description('serve a tile')
+  // XXX need path here
   .action(async () => {
     const m = new Mosaist();
-    const s = await m.createTileServer({
-      name: 'Tile One',
-      description: 'The first real tile ever! Does nothing, but still cool.'
-    });
+    const s = await m.watchDirectory(/* XXX pass path */);
     await s.serve();
   })
 ;

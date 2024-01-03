@@ -37,6 +37,8 @@
   },
   "dependencies": {
     "@helia/dag-cbor": "^1.0.3",
+    "blockstore-idb": "^1.1.7",
+    "datastore-idb": "^2.1.7",
     "helia": "^2.1.0",
     "multiformats": "^13.0.0"
   }

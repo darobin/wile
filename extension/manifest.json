@@ -26,7 +26,7 @@
     "https://*.dns.google/*",
     "https://*.cloudflare-dns.com/*"
   ],
-  "content_security_policy": "default-src 'self' https://*.ipfs.dweb.link wss://*.libp2p.io wss://ipfs-ws.neaweb.ch wss://ipfs-ws.neaweb.tech https://delegated-ipfs.dev https://dweb.link https://cf-ipfs.com https://4everland.io https://w3s.link https://*.ipfs.delegated-ipfs.dev https://*.ipfs.dweb.link https://*.ipfs.cf-ipfs.com https://*.ipfs.4everland.io https://*.ipfs.w3s.link https://dns.google https://cloudflare-dns.com; script-src 'self'",
+  "content_security_policy": "default-src 'self' https://*.ipfs.dweb.link wss://*.libp2p.io wss://ipfs-ws.neaweb.ch wss://ipfs-ws.neaweb.tech https://delegated-ipfs.dev https://dweb.link https://cf-ipfs.com https://4everland.io https://w3s.link https://*.ipfs.delegated-ipfs.dev https://*.ipfs.dweb.link https://*.ipfs.cf-ipfs.com https://*.ipfs.4everland.io https://*.ipfs.w3s.link https://dns.google https://cloudflare-dns.com; script-src 'self' 'unsafe-eval'",
   "protocol_handlers": [
     {
       "protocol": "web+tile",
