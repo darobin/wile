@@ -16,7 +16,7 @@
     {
       "protocol": "web+tile",
       "name": "Web Tile",
-      "uriTemplate": "/tile.html#!/%s"
+      "uriTemplate": "/tile.html#!url=%s"
     }
   ]
 }
