@@ -31,12 +31,9 @@
     "eslint": "^8.26.0"
   },
   "dependencies": {
-    "@helia/dag-cbor": "^1.0.3",
     "@libp2p/kad-dht": "^11.0.8",
     "commander": "^11.1.0",
-    "helia": "^2.1.0",
     "ipns": "^7.0.1",
-    "it-to-buffer": "^4.0.5",
     "kubo-rpc-client": "^3.0.2",
     "mime-types": "^2.1.35"
   }
