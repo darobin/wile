@@ -20,4 +20,7 @@ import { createHelia } from './helia.js';
   loader.style.display = 'none';
   const ifr = document.createElement('iframe');
   loader.after(ifr);
+  // ifr.setAttribute('src', 'http://bafkreidgolmfbyf3pfv2zgp7s3gykuflbddh3rpk3bgs7aqacwsk4ahgru.ipfs.localhost:8080/');
+  // ifr.setAttribute('src', 'test.txt');
+  ifr.setAttribute('src', 'https://2017.im/');
 })();
