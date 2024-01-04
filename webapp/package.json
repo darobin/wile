@@ -1,0 +1,45 @@
+{
+  "name": "wile-web-app",
+  "type": "module",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Web App to play with Web Tiles",
+  "author": "Robin Berjon <robin@berjon.com>",
+  "scripts": {
+    "watch": "esbuild wile.js --bundle --outfile=wile.min.js --format=esm --watch --sourcemap",
+    "build": "esbuild wile.js --bundle --outfile=wile.min.js --format=esm"
+  },
+  "bin": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darobin/wile.git"
+  },
+  "esm": {
+    "await": true
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "mocha": true,
+      "es2021": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [],
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "rules": {}
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.11",
+    "eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "@helia/dag-cbor": "^1.0.3",
+    "blockstore-idb": "^1.1.7",
+    "datastore-idb": "^2.1.7",
+    "helia": "^2.1.0",
+    "multiformats": "^13.0.0"
+  }
+}
