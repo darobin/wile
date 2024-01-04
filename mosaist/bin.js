@@ -16,12 +16,12 @@ program
 ;
 
 program
-  .command('serve')
-  .description('serve a tile')
+  .command('publish')
+  .description('publish a tile')
   .argument('<path>', 'path to the tile directory')
   .action(async (pth) => {
     const m = new Mosaist();
-    await m.watchDirectory(pth);
+    await m.publishDirectory(pth);
   })
 ;
 

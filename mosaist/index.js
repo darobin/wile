@@ -9,7 +9,7 @@ import { create } from "kubo-rpc-client";
 const ipfs = create();
 
 export default class Mosaist {
-  async watchDirectory (maybeRelPath) {
+  async publishDirectory (maybeRelPath) {
     const m = new MosaistManifestManager();
     if (!isAbsolute(maybeRelPath)) maybeRelPath = join(cwd(), maybeRelPath);
     const files = (await readdir(maybeRelPath, { recursive: true }))
@@ -23,16 +23,16 @@ export default class Mosaist {
       otherFiles.map(({ relPath, fullPath }) => m.addFileFromPath(relPath, fullPath))
     );
     const rootAddr = await m.addLatest();
-    console.warn(`serving web+tile://${rootAddr}/`);
-    // XXX do the watch part too
-    // - watch
-    //  - on add or change
-    //    - manifest: process & serve (if error, error)
-    //    - other: add, update map + manifest, serve
-    //  - on delete
-    //    - manifest: error
-    //    - other: remove, update map + manifest, serve
+    console.warn(`Published web+tile://${rootAddr}/`);
   }
+  // XXX do the watch part too so it's easy to keep publishing a tile as it is being hacked on
+  // - watch
+  //  - on add or change
+  //    - manifest: process & serve (if error, error)
+  //    - other: add, update map + manifest, serve
+  //  - on delete
+  //    - manifest: error
+  //    - other: remove, update map + manifest, serve
   async fetchManifest (url) {
     const cid = new URL(url).hostname;
     return await getDAG(CID.parse(cid));
