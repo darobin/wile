@@ -3,6 +3,7 @@ import { isAbsolute, join } from 'node:path';
 import { cwd } from 'node:process';
 import { readFile, readdir } from 'node:fs/promises';
 import mime from 'mime-types';
+import { CID } from 'multiformats/cid';
 import { createHelia } from 'helia';
 import { dagCbor } from '@helia/dag-cbor';
 import { raw } from './helia-raw.js';
@@ -34,6 +35,14 @@ export default class Mosaist {
     //    - other: remove, update map + manifest, serve
     return s;
   }
+  async fetchManifest (url) {
+    const helia = await createHelia();
+    const cid = new URL(url).hostname;
+    const cbor = dagCbor(helia);
+    const manifest = await cbor.get(CID.parse(cid));
+    await helia.stop();
+    return manifest;
+  }
 }
 
 class MosaistTileServer {
@@ -47,6 +56,10 @@ class MosaistTileServer {
     this.dagCbor = dagCbor(this.helia);
     this.raw = raw(this.helia);
     console.warn(`Mosaist server started…`);
+  }
+  async stop () {
+    if (!this.helia) return;
+    this.helia.stop();
   }
   setManifest (manifest) {
     this.manifest = manifest;

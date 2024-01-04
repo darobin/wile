@@ -36,6 +36,8 @@
     "commander": "^11.1.0",
     "helia": "^2.1.0",
     "ipns": "^7.0.1",
+    "it-to-buffer": "^4.0.5",
+    "kubo-rpc-client": "^3.0.2",
     "mime-types": "^2.1.35"
   }
 }

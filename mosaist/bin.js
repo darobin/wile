@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFile } from "node:fs/promises";
+import { exit } from "node:process";
 import { program } from "commander";
 import Mosaist from "./index.js";
 import makeRel from "./rel.js";
@@ -21,6 +22,18 @@ program
   .action(async (pth) => {
     const m = new Mosaist();
     await m.watchDirectory(pth);
+  })
+;
+
+program
+  .command('manifest')
+  .description('load and print the manifest for a URL')
+  .argument('<URL>', 'URL to a tile')
+  .action(async (url) => {
+    const m = new Mosaist();
+    const manifest = await m.fetchManifest(url);
+    console.log(JSON.stringify(manifest, null, 2));
+    exit(0);
   })
 ;
 

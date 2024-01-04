@@ -7,7 +7,7 @@ import { IDBBlockstore } from 'blockstore-idb';
 
 let helia;
 
-window.addEventListener('DOMContentLoaded', async () => {
+(async () => {
   const datastore = new IDBDatastore('helia/datastore');
   await datastore.open();
   const blockstore = new IDBBlockstore('helia/blockstore');
@@ -21,4 +21,4 @@ window.addEventListener('DOMContentLoaded', async () => {
   console.warn(`Helia created`, helia);
   const cbor = await helia.get(cid);
   console.warn(cbor);
-});
+})();
