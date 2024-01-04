@@ -8,6 +8,7 @@ import { IDBBlockstore } from 'blockstore-idb';
 let helia;
 
 (async () => {
+  // Setup
   const datastore = new IDBDatastore('helia/datastore');
   await datastore.open();
   const blockstore = new IDBBlockstore('helia/blockstore');
@@ -18,7 +19,14 @@ let helia;
   console.warn(`CID=${cid.toString()}`);
   const node = await createHelia({ datastore, blockstore, libp2p: { connectionManager: { minConnections: 0 }}});
   helia = dagCbor(node);
-  console.warn(`Helia created`, helia);
-  const cbor = await helia.get(cid);
-  console.warn(cbor);
+  console.warn(`Helia created`);
+  const manifest = await helia.get(cid);
+  console.warn(`Manifest loaded`, manifest);
+
+  // We have a manifest, let's get us some content
+  document.title = manifest.name;
+  const loader = document.querySelector('#loading');
+  loader.style.display = 'none';
+  const ifr = document.createElement('iframe');
+  loader.after(ifr);
 })();
